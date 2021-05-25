@@ -1,15 +1,23 @@
 import React, { Component } from 'react'
 class Person extends Component {
     state={
-        count:1
+        count:6,
+        imageUrl:"https://picsum.photos/200"
+    };
+
+    style={
+        fontSize:10,
+        fontWeight:"bold"
+
     };
     
     render() { 
          return (
-            <React.Fragment>
-                <span>{this.formatCount()} </span>
-                <button>Increment</button>
-            </React.Fragment>
+            <div>
+                <img src={this.state.imageUrl} alt="" />
+                <span style={this.style} className="badge badge-primary m-2">{this.formatCount()} </span>
+                <button className="btn btn-danger btn-sm">Increment</button>
+            </div>
 
 
          ) ;
