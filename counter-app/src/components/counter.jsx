@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 class Person extends Component {
     state={   //state object
         count:11,
+        tags:['tag1','tag2','tag3'],
         imageUrl:"https://picsum.photos/200"
     };
 
@@ -18,6 +19,9 @@ class Person extends Component {
                 <img src={this.state.imageUrl} alt="" />
                 <span style={this.style} className={this.getBadgeClasses()}>{this.formatCount()} </span>
                 <button className="btn btn-danger btn-sm">Increment</button>
+                <ul>
+                   {this.state.tags.map(tag=><li key={tag}>{tag}</li>)}
+                </ul>
             </div>
 
 
