@@ -18,20 +18,32 @@ class Person extends Component {
     //    this.handleIncrement= this.handleIncrement.bind(this);
     // }
 
-    handleIncrement= () =>
+    handleIncrement= (product) =>
     {
-        console.log('Incremet Clicked',this);//using "this" error happen, so use handleIncrement=()=>
-    }
-    
+        //console.log('Incremet Clicked',this);//using "this" error happen, so use handleIncrement=()=>
+        console.log(product);
+        this.setState({
+            count:this.state.count+1  // this.state.count++;
+        })
+    };
+     
+    doHandleIncrement=()=>{
+        this.handleIncrement({
+            id:1
+        })
+    };
     render() { 
       //  let classes = this.getBadgeClasses(); //used control+shift+r to extract the method
          return (
             <div>
                 <img src={this.state.imageUrl} alt="" />
                 <span style={this.style} className={this.getBadgeClasses()}>{this.formatCount()} </span>
-                <button onClick={this.handleIncrement} className="btn btn-danger btn-sm">Increment</button>
+                <button 
+                onClick={()=>this.handleIncrement({id:1})} 
+                className="btn btn-danger btn-sm">Increment</button>
                 <ul>
-                   {this.state.tags.map(tag=><li key={tag}>{tag}</li>)}
+                   {this.state.tags.map(tag=>
+                   <li key={tag}>{tag}</li>)}
                 </ul>
             </div>
 
