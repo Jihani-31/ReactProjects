@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 class Person extends Component {
     state={   //state object
-        count:11,
+        count:10,
         tags:['tag1','tag2','tag3'],
         imageUrl:"https://picsum.photos/200"
     };
@@ -11,6 +11,17 @@ class Person extends Component {
         fontWeight:"bold"
 
     };
+
+    // constructor(){//bind method
+    //     super()
+    //     //console.log("constructor",this);//can access this
+    //    this.handleIncrement= this.handleIncrement.bind(this);
+    // }
+
+    handleIncrement= () =>
+    {
+        console.log('Incremet Clicked',this);//using "this" error happen, so use handleIncrement=()=>
+    }
     
     render() { 
       //  let classes = this.getBadgeClasses(); //used control+shift+r to extract the method
@@ -18,7 +29,7 @@ class Person extends Component {
             <div>
                 <img src={this.state.imageUrl} alt="" />
                 <span style={this.style} className={this.getBadgeClasses()}>{this.formatCount()} </span>
-                <button className="btn btn-danger btn-sm">Increment</button>
+                <button onClick={this.handleIncrement} className="btn btn-danger btn-sm">Increment</button>
                 <ul>
                    {this.state.tags.map(tag=><li key={tag}>{tag}</li>)}
                 </ul>
