@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-class Person extends Component {
+class Counter extends Component {
     state={   //state object
-        count:10,
+        count:this.props.value,
         tags:['tag1','tag2','tag3'],
         imageUrl:"https://picsum.photos/200"
     };
@@ -33,18 +33,21 @@ class Person extends Component {
         })
     };
     render() { 
+       // console.log('props',this.props); 
       //  let classes = this.getBadgeClasses(); //used control+shift+r to extract the method
-         return (
+     
+        return (
             <div>
+               <h4> {this.props.id}</h4>
                 <img src={this.state.imageUrl} alt="" />
                 <span style={this.style} className={this.getBadgeClasses()}>{this.formatCount()} </span>
                 <button 
                 onClick={()=>this.handleIncrement({id:1})} 
                 className="btn btn-danger btn-sm">Increment</button>
-                <ul>
+                {/* <ul>
                    {this.state.tags.map(tag=>
                    <li key={tag}>{tag}</li>)}
-                </ul>
+                </ul> */}
             </div>
 
 
@@ -65,4 +68,4 @@ class Person extends Component {
 
 }
  
-export default Person;
+export default Counter;

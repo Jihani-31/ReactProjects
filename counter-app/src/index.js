@@ -6,12 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-import Person from './components/counter';
+//import Person from './components/counter';
+import Counters from './components/counters';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Person />
+    <Counters />
   </React.StrictMode>,
   document.getElementById('root')
 );
