@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 class Counter extends Component {
+  
+
+    componentWillUnmount(){
+      console.log("counter-unmount");
+    }
+
     // state={   //state object
     //     value:this.props.value,
        
@@ -38,7 +44,8 @@ class Counter extends Component {
     //         id:1
     //     }) 
     // };
-    render() { 
+    render() {
+      console.log("Counter-render");
        // console.log('props',this.props); 
       //  let classes = this.getBadgeClasses(); //used control+shift+r to extract the method
      
