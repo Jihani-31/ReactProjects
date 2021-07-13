@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 //imrc is a shortcut for 1st line
 import {getMovies} from '../services/fakeMovieService';
+
+import pagination from './common/pagination';
 class Movies extends Component {
     state = { 
         movies:getMovies()
@@ -48,7 +50,8 @@ class Movies extends Component {
                     ))}
                         
                     </tbody>
-                </table>      
+                </table> 
+                <pagination />
 
             </React.Fragment>
                   
