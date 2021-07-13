@@ -51,7 +51,7 @@ class Movies extends Component {
                         
                     </tbody>
                 </table> 
-                <pagination />
+                <pagination itemCount={this.state.movies.length} />
 
             </React.Fragment>
                   

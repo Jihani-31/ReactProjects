@@ -1,11 +1,13 @@
 import React from 'react';
 
 
-function pagination(props) {
+const pagination=(props)=> {
   return (
-    <div>
-      <h1>hello</h1>
-    </div>
+        <nav>
+            <ul className="pagination">
+                <li className="page-item"><a className="page-link">1</a></li>
+            </ul>
+        </nav>
   );
 }
 
